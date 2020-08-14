@@ -1,0 +1,185 @@
+{
+    "configs": [
+        "/config.setup.json",
+        "/lang/lang.en.json"
+    ],
+    "title": "Конфигурация",
+    "class": "col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6",
+    "content": [
+        {
+            "type": "h5",
+            "title": "{{NamePVSettings}}",
+            "class": "alert-warning"
+        },
+        {
+            "type": "link",
+            "title": "{{ButMainPage}}",
+            "action": "/",
+            "class": "btn btn-block btn-warning"
+        },
+
+
+        {
+            "type": "checkbox",
+            "name": "stpv-arg",
+            "title": "{{PVSetArray}}",
+            "style": "width:100%;float:left;",
+            "action": "/pv?stpv=[[stpv-arg]]",
+            "state": "{{stpv}}"
+        },
+
+        {
+            "type": "checkbox",
+            "name": "papv-arg",
+            "title": "{{PVSetProd}}",
+            "style": "width:100%;float:left;",
+            "action": "/pv?papv=[[papv-arg]]",
+            "state": "{{papv}}"
+        },
+
+
+        {
+            "type": "h4",
+            "title": "{{PVSetPnom}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{PVSetPnom}}",
+            "name": "pnpv-arg",
+            "pattern": "",
+            "state": "{{pnpv}}",
+            "style": "width:40%;float:right"
+        },
+
+
+        {
+            "type": "text",
+            "title": "<div style='margin-top:10px;margin-bottom:10px;'><font color='black'><p style='border: 1px solid #808080; border-radius: 3px; background-color: #E6E6FA; padding: 10px;'>{{PVSetWarn1}}</p></font></div>",
+            "style": "width:100%;float:left;"
+        }, 
+
+
+        {
+            "type": "h4",
+            "title": "{{PVSetVoc}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{PVSetVoc}}",
+            "name": "vocpv-arg",
+            "pattern": "",
+            "state": "{{vocpv}}",
+            "style": "width:40%;float:right"
+        },
+
+        
+
+        {
+            "type": "h4",
+            "title": "{{PVSetVmp}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{PVSetVmp}}",
+            "name": "vmppv-arg",
+            "pattern": "",
+            "state": "{{vmppv}}",
+            "style": "width:40%;float:right"
+        },
+
+        
+        {
+            "type": "text",
+            "title": "<div style='margin-top:10px;margin-bottom:10px;'><font color='black'><p style='border: 1px solid #808080; border-radius: 3px; background-color: #E6E6FA; padding: 10px;'>{{PVSetWarn2}}</p></font></div>",
+            "style": "width:100%;float:left;"
+        }, 
+
+
+        {
+            "type": "h4",
+            "title": "{{PVSetImp}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{PVSetImp}}",
+            "name": "imppv-arg",
+            "pattern": "",
+            "state": "{{imppv}}",
+            "style": "width:40%;float:right"
+        },
+
+        
+
+
+        {
+            "type": "h4",
+            "title": "{{PVSetIsc}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{PVSetIsc}}",
+            "name": "iscpv-arg",
+            "pattern": "",
+            "state": "{{iscpv}}",
+            "style": "width:40%;float:right"
+        },
+
+        
+        {
+            "type": "text",
+            "title": "<div style='margin-top:10px;margin-bottom:10px;'><font color='black'><p style='border: 1px solid #808080; border-radius: 3px; background-color: #E6E6FA; padding: 10px;'>{{PVSetWarn3}}</p></font></div>",
+            "style": "width:100%;float:left;"
+        }, 
+
+
+        {
+            "type": "h4",
+            "title": "{{PVSetAia}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{PVSetAia}}",
+            "name": "angpv-arg",
+            "pattern": "",
+            "state": "{{angpv}}",
+            "style": "width:40%;float:right"
+        },
+
+        
+        {
+            "type": "h4",
+            "title": "{{PVSetAa}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{PVSetAa}}",
+            "name": "azpv-arg",
+            "pattern": "",
+            "state": "{{azpv}}",
+            "style": "width:40%;float:right"
+        },
+
+        
+        {
+            "type": "text",
+            "title": "<div style='margin-top:10px;margin-bottom:10px;'><font color='black'><p style='border: 1px solid #808080; border-radius: 3px; background-color: #E6E6FA; padding: 10px;'>{{PVSetWarn4}}</p></font></div>",
+            "style": "width:100%;float:left;"
+        }, 
+
+        
+        {
+            "type": "button",
+            "title": "{{ButSave}}",
+            "action": "pv?pnpv=[[pnpv-arg]]&vocpv=[[vocpv-arg]]&vmppv=[[vmppv-arg]]&imppv=[[imppv-arg]]&iscpv=[[iscpv-arg]]&angpv=[[angpv-arg]]&azpv=[[azpv-arg]]",
+            "class": "btn btn-block btn-warning",
+            "style": "width:100%;display:inline"
+        } 
+    ]
+}

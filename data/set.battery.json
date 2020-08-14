@@ -1,0 +1,131 @@
+{
+    "configs": [
+        "/config.setup.json",
+        "/lang/lang.en.json"
+    ],
+    "title": "Конфигурация",
+    "class": "col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6",
+    "content": [
+        {
+            "type": "h5",
+            "title": "{{NameBatSettings}}",
+            "class": "alert-warning"
+        },
+        {
+            "type": "link",
+            "title": "{{ButMainPage}}",
+            "action": "/",
+            "class": "btn btn-block btn-warning"
+        },
+
+
+        {
+            "type": "h4",
+            "title": "{{BatSetSOCF}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{BatSetSOCF}}",
+            "name": "socf",
+            "pattern": "71|72|73|74|75|76|77|78|79|80|81|82|83|84|85|86|87|88|89|90|95|100",
+            "state": "{{socf}}",
+            "style": "width:40%;float:right"
+        },
+
+
+
+        {
+            "type": "h4",
+            "title": "{{BatSetSOCM}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{BatSetSOCM}}",
+            "name": "socm",
+            "pattern": "31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|60|61|62|63|64|65|66|67|68|69|70",
+            "state": "{{socm}}",
+            "style": "width:40%;float:right"
+        },
+
+
+
+        {
+            "type": "h4",
+            "title": "{{BatSetSOCL}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{BatSetSOCL}}",
+            "name": "socl",
+            "pattern": "0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30",
+            "state": "{{socl}}",
+            "style": "width:40%;float:right"
+        },
+
+
+
+        {
+            "type": "text",
+            "title": "<div style='margin-top:10px;margin-bottom:10px;'><font color='black'><p style='border: 1px solid #808080; border-radius: 3px; background-color: #E6E6FA; padding: 10px;'>{{BatSetWarn1}}</p></font></div>",
+            "style": "width:100%;float:left;"
+        }, 
+
+
+        {
+            "type": "h4",
+            "title": "{{BatSetLoadsM}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "select",
+            "state": "VDE",
+            "style": "width:40%;float:right",
+            "title": {
+                "None": "None",
+                "3only": "Group 3 only",
+                "2only": "Group 2 only",
+                "2and3": "Groups 2 and 3"
+            }
+        },
+
+
+
+
+        {
+            "type": "h4",
+            "title": "{{BatSetLoadsL}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "select",
+            "state": "VDE",
+            "style": "width:40%;float:right",
+            "title": {
+                "None": "None",
+                "3only": "All",
+                "2only": "All Except Group 1"
+            }
+        },
+
+
+
+        {
+            "type": "text",
+            "title": "<div style='margin-top:10px;margin-bottom:10px;'><font color='black'><p style='border: 1px solid #808080; border-radius: 3px; background-color: #E6E6FA; padding: 10px;'>{{BatSetWarn2}}</p></font></div>",
+            "style": "width:100%;float:left;"
+        }, 
+
+
+
+        {
+            "type": "button",
+            "title": "{{ButSave}}",
+            "action": "soc?socf=[[socf]]&socm=[[socm]]&socl=[[socl]]",
+            "class": "btn btn-block btn-warning",
+            "style": "width:100%;display:inline"
+        } 
+    ]
+}

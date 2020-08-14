@@ -1,0 +1,191 @@
+{
+    "configs": [
+        "/config.setup.json",
+        "/lang/lang.en.json"
+    ],
+    "title": "Конфигурация",
+    "class": "col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6",
+    "content": [
+        {
+            "type": "h5",
+            "title": "{{NameGridSettings}}",
+            "class": "alert-warning"
+        },
+        {
+            "type": "link",
+            "title": "{{ButMainPage}}",
+            "action": "/",
+            "class": "btn btn-block btn-warning"
+        },
+
+
+        {
+            "type": "h4",
+            "title": "{{GridSetVoltage}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{GridSetVoltage}}",
+            "name": "vsi-arg",
+            "pattern": "",
+            "state": "{{vsi}}",
+            "style": "width:40%;float:right"
+        },
+
+
+        {
+            "type": "h4",
+            "title": "{{GridSetFrequency}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{GridSetFrequency}}",
+            "name": "fsi-arg",
+            "pattern": "",
+            "state": "{{fsi}}",
+            "style": "width:40%;float:right"
+        },
+
+
+        {
+            "type": "h4",
+            "title": "{{GridSetProtection}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "select",
+            "style": "width:40%;float:right",
+            "state": "{{gpsi}}",
+            "name": "gpsi-arg",
+            "action": "/gpsi?gpsi=[[gpsi-arg]]",
+            "title": {
+                "0": "VDE4105(184-253Vac)",
+                "1": "UPS (170-280Vac)",
+                "2": "home",
+                "3": "GEN"
+            }
+        },
+
+
+
+        {
+            "type": "checkbox",
+            "name": "pud-arg",
+            "title": "{{GridSetProtectionUser}}",
+            "style": "width:100%;float:left;",
+            "action": "/pud?pud=[[pud-arg]]",
+            "state": "{{pud}}"
+        },
+
+
+        {
+            "type": "h4",
+            "title": "{{GridSetVmax}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{GridSetVmax}}",
+            "name": "vgmin-arg",
+            "pattern": "",
+            "state": "{{vgmin}}",
+            "style": "width:40%;float:right"
+        },
+
+
+        {
+            "type": "h4",
+            "title": "{{GridSetVmin}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{GridSetVmin}}",
+            "name": "vgmax-arg",
+            "pattern": "",
+            "state": "{{vgmax}}",
+            "style": "width:40%;float:right"
+        },
+
+
+        {
+            "type": "checkbox",
+            "name": "gtei-arg",
+            "title": "{{GridSetExport}}",
+            "style": "width:100%;float:left;",
+            "action": "/gtei?gtei=[[gtei-arg]]",
+            "state": "{{gtei}}"
+        },
+
+
+        {
+            "type": "checkbox",
+            "name": "dsoc-arg",
+            "title": "{{GridSetDSO}}",
+            "style": "width:100%;float:left;",
+            "action": "/dsoc?dsoc=[[dsoc-arg]]",
+            "state": "{{dsoc}}"
+        },
+
+
+        
+        {
+            "type": "h4",
+            "title": "{{GridSetPeakTime}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{GridSetPeakTime}}",
+            "name": "pt-arg",
+            "pattern": "",
+            "state": "{{pt}}",
+            "style": "width:40%;float:right"
+        },
+
+
+
+        {
+            "type": "h4",
+            "title": "{{GridSetOffPeakTime}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{GridSetOffPeakTime}}",
+            "name": "opt-arg",
+            "pattern": "",
+            "state": "{{opt}}",
+            "style": "width:40%;float:right"
+        },
+
+
+        {
+            "type": "h4",
+            "title": "{{GridSetNeutralGrounding}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "select",
+            "state": "VDE",
+            "style": "width:40%;float:right",
+            "title": {
+                "always": "{{GridSetAlways}}",
+                "never": "{{GridSetNever}}",
+                "invertor": "{{GridSetInvertor}}"
+            }
+        },
+
+
+
+        {
+            "type": "button",
+            "title": "{{ButSave}}",
+            "action": "grid?vsi=[[vsi-arg]]&fsi=[[fsi-arg]]&vgmin=[[vgmin-arg]]&vgmax=[[vgmax-arg]]&pt=[[pt-arg]]&opt=[[opt-arg]]",
+            "class": "btn btn-block btn-warning",
+            "style": "width:100%;display:inline"
+        }
+    ]
+}

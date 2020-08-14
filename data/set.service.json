@@ -1,0 +1,360 @@
+{
+  "configs": [
+    "/config.setup.json",
+    "/lang/lang.en.json"
+  ],
+  "title": "Конфигурация",
+  "class": "col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6",
+  "content": [
+    {
+      "type": "h5",
+      "title": "{{NameServSettings}}",
+      "class": "alert-warning"
+    },
+    {
+      "type": "link",
+      "title": "{{ButMainPage}}",
+      "action": "/",
+      "class": "btn btn-block btn-warning"
+    },
+
+
+
+    {
+      "type": "h4",
+      "title": "Device ID: {{chipID}}"
+    },
+    {
+      "type": "h4",
+      "title": "Compiling date: {{firmware_version}}"
+    },
+    {
+      "type": "h4",
+      "title": "LittleFS version: 2.0.1"
+    },
+
+    {
+      "type": "hr"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetESaving}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "select",
+      "name": "esvi-arg",
+      "state": "{{esvi}}",
+      "style": "width:40%;float:right",
+      "action": "/esvi?esvi=[[esvi-arg]]",
+      "title": {
+        "1": "{{ServSetESavingOn}}",
+        "0": "{{ServSetESavingOff}}"
+      }
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetBatType}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "select",
+      "style": "width:40%;float:right",
+      "name": "bti-arg",
+      "state": "{{bti}}",
+      "action": "/bti?bti=[[bti-arg]]",
+      "title": {
+        "0": "{{ServSetBatType0}}",
+        "1": "{{ServSetBatType1}}",
+        "2": "{{ServSetBatType2}}",
+        "3": "{{ServSetBatType3}}",
+        "4": "{{ServSetBatType4}}",
+        "5": "{{ServSetBatType5}}",
+        "6": "{{ServSetBatType6}}"
+      }
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetSysMode}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "select",
+      "name": "setmode-arg",
+      "style": "width:40%;float:right",
+      "state": "{{setmode}}",
+      "action": "/setmode?setmode=[[setmode-arg]]",
+      "title": {
+        "1": "1 Работа системы от сети с разрешения заряда от сети",
+        "2": "2 Работа системы от сети без разрешения заряда от сети",
+        "3": "3 Работа системы от ВИЭ и АКБ, без экспорта",
+        "4": "4 Работа системы от ВИЭ и АКБ, с экспортом",
+        "5": "5 Работа системы от ВИЭ и сети в режиме потребления без экспорта",
+        "6": "6 Работа системы от ВИЭ и сети  c экспортом (заряд акб)",
+        "7": "7 Работа системы от ВИЭ и сети  c экспортом (заряд акб + потребитель)",
+        "8": "8 Работа системы от ДГ"
+      }
+    },
+    
+    {
+      "type": "checkbox",
+      "name": "manual-arg",
+      "title": "Manual mode",
+      "style": "width:100%;float:left;",
+      "action": "/service?manual=[[manual-arg]]",
+      "state": "{{manual}}"
+  },
+
+    {
+      "type": "h4",
+      "title": "Test value of itpv:",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "",
+      "name": "itpv-arg",
+      "pattern": "",
+      "style": "width:40%;float:right",
+      "state": "{{itpv}}"
+    },
+
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetBatNum}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetBatNum}}",
+      "name": "bnset-arg",
+      "pattern": "1|2|3|4|5",
+      "style": "width:40%;float:right",
+      "state": "{{bnset}}"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetBatCap}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetBatCap}}",
+      "name": "cbti-arg",
+      "pattern": "",
+      "state": "{{cbti}}",
+      "style": "width:40%;float:right"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetInvI}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetInvI}}",
+      "name": "idsi-arg",
+      "pattern": "",
+      "state": "{{idsi}}",
+      "style": "width:40%;float:right"
+    },
+
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetGridI}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetGridI}}",
+      "name": "igchmi-arg",
+      "pattern": "",
+      "state": "{{igchmi}}",
+      "style": "width:40%;float:right"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetPVI}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetPVI}}",
+      "name": "ipvmi-arg",
+      "pattern": "",
+      "state": "{{ipvmi}}",
+      "style": "width:40%;float:right"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetCCI}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetCCI}}",
+      "name": "ichmi-arg",
+      "pattern": "",
+      "state": "{{ichmi}}",
+      "style": "width:40%;float:right"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetBSCV}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetBSCV}}",
+      "name": "vbsci-arg",
+      "pattern": "",
+      "state": "{{vbsci}}",
+      "style": "width:40%;float:right"
+    },
+
+    
+    {
+      "type": "h4",
+      "title": "{{ServSetBSDV}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetBSDV}}",
+      "name": "vbsdi-arg",
+      "pattern": "",
+      "state": "{{vbsdi}}",
+      "style": "width:40%;float:right"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetCVV}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetCVV}}",
+      "name": "vabi-arg",
+      "pattern": "",
+      "state": "{{vabi}}",
+      "style": "width:40%;float:right"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetFV}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetFV}}",
+      "name": "vfli-arg",
+      "pattern": "",
+      "state": "{{vfli}}",
+      "style": "width:40%;float:right"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetBLV}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetBLV}}",
+      "name": "vbli-arg",
+      "pattern": "",
+      "state": "{{vbli}}",
+      "style": "width:40%;float:right"
+    },
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetBHV}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "input",
+      "title": "{{ServSetBHV}}",
+      "name": "vbhi-arg",
+      "pattern": "",
+      "state": "{{vbhi}}",
+      "style": "width:40%;float:right"
+    },
+
+
+
+    {
+      "type": "h4",
+      "title": "{{ServSetSPB}}",
+      "style": "width:60%;float:left;"
+    },
+    {
+      "type": "select",
+      "style": "width:40%;float:right",
+      "name": "spbi-arg",
+      "state": "{{spbi}}",
+      "action": "/spbi?spbi=[[spbi-arg]]",
+      "title": {
+        "0": "{{ServSetSPB1}}",
+        "1": "{{ServSetSPB2}}"
+      }
+    },
+    {
+      "type": "button",
+      "title": "{{ButSave}}",
+      "action": "service?itpv=[[itpv-arg]]&bnset=[[bnset-arg]]&cbti=[[cbti-arg]]&idsi=[[idsi-arg]]&igchmi=[[igchmi-arg]]&ipvmi=[[ipvmi-arg]]&ichmi=[[ichmi-arg]]&vbsci=[[vbsci-arg]]&vbsdi=[[vbsdi-arg]]&vabi=[[vabi-arg]]&vfli=[[vfli-arg]]&vbli=[[vbli-arg]]&vbhi=[[vbhi-arg]]",
+      "class": "btn btn-block btn-warning",
+      "style": "width:100%;display:inline"
+    }, 
+    {
+      "type": "h3",
+      "name": "my-block",
+      "style": "position:fixed;top:50%;left:50%;width:400px;margin-left:-200px;text-align:center;",
+      "class": "hidden"
+    },
+
+    {
+      "type": "hr"
+    },
+    
+    {
+      "type": "button",
+      "title": "Update firmware",
+      "action": "/check",
+      "response": "[[my-block]]",
+      "class": "btn btn-block btn-danger"
+    },
+    {
+      "type": "link",
+      "title": "Restart device",
+      "action": "javascript:if(confirm(renameBlock(jsonResponse,'Перезагрузить?'))){send_request(this,'/restart?device=ok');}",
+      "class": "btn btn-block btn-danger"
+    }
+  ]
+}
