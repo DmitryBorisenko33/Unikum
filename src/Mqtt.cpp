@@ -104,25 +104,13 @@ void callback(char* topic, byte* payload, unsigned int length) {
     }
     Serial.println(" => " + str);
 
-    //===================================================================
-    //{"command": "setusermodecr","arg": 2}
+
     if (topic_str.indexOf("/core001/control") != -1) {
-        if (jsonReadStr(str, "command") == "setusermodecr") {
-            jsonWriteInt(configSetupJson, "usermodecr", jsonReadInt(str, "arg"));
-            saveConfig();
-            //send_user_mode();
-        }
-        //if (jsonReadStr(str, "command") == "getusermode") {
-        //    send_user_mode();
-        //}
+       
     }
 }
 
-void send_user_mode() {
-    //String res = "{}";
-    //jsonWriteInt(res, "usermode", jsonReadInt(configSetupJson, "usermode"));
-    //mqtt_send_status("core001", res);
-}
+
 
 boolean mqtt_send_parametr(String device_name, String data) {
     String topik = prefix + "/device/" + chipID + "/" + device_name + "/parameter";
@@ -148,20 +136,6 @@ boolean mqtt_send_debug(String data, String name) {
     client_mqtt.print(data);
     client_mqtt.endPublish();
     return send_status;
-}
-
-void print_mqtt_send_status(boolean send_status, String device_name, String topik) {
-    if (send_status) {
-#ifdef mqtt_only_final_line
-        Serial.print("[MQTT][<=]\"");
-        Serial.println(topik + "\" " + device_name + " send date completed");
-#endif
-    } else {
-#ifdef mqtt_only_final_line
-        Serial.print("[MQTT][<=]\"");
-        Serial.println(topik + "\" " + device_name + " send date error");
-#endif
-    }
 }
 
 String stateMQTT() {
