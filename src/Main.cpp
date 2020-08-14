@@ -1,10 +1,6 @@
 #include "Main.h"
-
-#include "DG.h"
 #include "FilesSystem.h"
 #include "Global.h"
-#include "Modbus.h"
-#include "ModbusToMqtt.h"
 #include "Mqtt.h"
 #include "Upgrade.h"
 #include "Web.h"
@@ -16,11 +12,6 @@ void setup() {
     file_system_init();
     Serial.println("file_system_init");
     //---------------------------------------------------------
-    DG_init();
-    Serial.println("DG_init");
-    //---------------------------------------------------------
-    //"wifissid": "TP-LINK_CF12",
-    //"wifipass": "Vbift2010",
     ROUTER_Connecting();
     Serial.println("ROUTER_Connecting");
     //---------------------------------------------------------
@@ -32,9 +23,6 @@ void setup() {
     //---------------------------------------------------------
     MQTT_init();
     Serial.println("MQTT_init");
-    //---------------------------------------------------------
-    systemInit();
-    Serial.println("modbus_init");
     //---------------------------------------------------------
     initUpgrade();
     Serial.println("initUpgrade");
@@ -50,7 +38,4 @@ void loop() {
     ts.update();
     handleMQTT();
     handle_upgrade();
-
-    modbus115200->loop();
-    modbus9600->loop();
 }
