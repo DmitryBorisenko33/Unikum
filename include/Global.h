@@ -37,7 +37,10 @@
 
 extern TickerScheduler ts;
 
+#ifdef mqtts
 extern WiFiClientSecure espClient;
+#endif
+
 extern PubSubClient client_mqtt;
 
 extern AsyncWebServer server;

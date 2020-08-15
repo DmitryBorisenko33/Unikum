@@ -6,7 +6,14 @@
 
 TickerScheduler ts(10);
 
+#ifdef mqtts
 WiFiClientSecure espClient;
+#endif
+
+#ifndef mqtts
+WiFiClient espClient;
+#endif
+
 PubSubClient client_mqtt(espClient);
 
 AsyncWebServer server(80);

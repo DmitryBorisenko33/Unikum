@@ -71,7 +71,9 @@ void MQTT_Connecting() {
 
     if ((mqtt_server != "")) {
         Serial.println("[MQTT][E] Lost MQTT connection, start reconnecting");
+#ifdef mqtts        
         espClient.setCACert(local_root_ca);
+#endif        
         client_mqtt.setServer(mqtt_server.c_str(), jsonReadInt(configSetupJson, "mqttPort"));
         if (WiFi.status() == WL_CONNECTED) {
             if (!client_mqtt.connected()) {
