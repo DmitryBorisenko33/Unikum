@@ -27,42 +27,6 @@
 			"title": "WIFi Settings",
 			"action": "/?set.wifi",
 			"class": "btn btn-block btn-default"
-		},
-		{
-			"type": "link",
-			"title": "Grid Settings",
-			"action": "/?set.grid",
-			"class": "btn btn-block btn-default"
-		},
-		{
-			"type": "link",
-			"title": "Battery Settings",
-			"action": "/?set.battery",
-			"class": "btn btn-block btn-default"
-		},
-		{
-			"type": "link",
-			"title": "PV Settings",
-			"action": "/?set.pv",
-			"class": "btn btn-block btn-default"
-		},
-		{
-			"type": "link",
-			"title": "Generator Settings",
-			"action": "/?set.gen",
-			"class": "btn btn-block btn-default"
-		},
-		{
-			"type": "link",
-			"title": "IoT Settings",
-			"action": "/?set.iot",
-			"class": "btn btn-block btn-default"
-		},
-		{
-			"type": "link",
-			"title": "Service Settings",
-			"action": "/?set.service",
-			"class": "btn btn-block btn-default"
 		}
 	]
 }

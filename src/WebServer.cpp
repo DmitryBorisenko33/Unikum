@@ -63,9 +63,7 @@ void Web_server_init() {
   server.serveStatic("/favicon.ico", LittleFS, "/favicon.ico").setCacheControl("max-age=31536000");
   server.serveStatic("/icon.jpeg", LittleFS, "/icon.jpeg").setCacheControl("max-age=31536000");
 
-  server.serveStatic("/", LittleFS, "/").setDefaultFile("index.htm")
-  .setAuthentication(jsonReadStr(configSetupJson,"WebUser").c_str(), jsonReadStr(configSetupJson,"WebPass").c_str());
-
+  server.serveStatic("/", LittleFS, "/").setDefaultFile("index.htm").setAuthentication(jsonReadStr(configSetupJson,"WebUser").c_str(), jsonReadStr(configSetupJson,"WebPass").c_str());
 
   server.onNotFound([](AsyncWebServerRequest * request) {
     Serial.printf("NOT_FOUND: ");

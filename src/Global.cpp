@@ -18,12 +18,6 @@ PubSubClient client_mqtt(espClient);
 
 AsyncWebServer server(80);
 
-HardwareSerial uart1(1);
-ModbusMaster modbus1;
-
-HardwareSerial uart2(2);
-ModbusMaster modbus2;
-
 /*
 * Global vars.cpp (с данными)
 */

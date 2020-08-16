@@ -3,7 +3,7 @@
 
 
 void saveConfig() {
-    writeFile("config.json", configSetupJson);
+    writeFile("config.setup.json", configSetupJson);
 }
 
 int count(String str, String found) {

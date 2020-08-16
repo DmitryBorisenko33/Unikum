@@ -11,10 +11,18 @@
 #include "Utils\JsonUtils.h"
 #include "Utils\StringUtils.h"
 #include "Utils\TimeUtils.h"
-#ifdef ESP32
+
+#ifdef littleFileSystem
 #include "LITTLEFS.h"
 #define LittleFS LITTLEFS
 #endif
+
+#ifndef littleFileSystem
+#include "SPIFFS.h"
+#define LittleFS SPIFFS
+#endif
+
+#include "esp_log.h"
 
 #include <ArduinoJson.h>
 #include <AsyncTCP.h>
@@ -22,7 +30,7 @@
 #include <ESPmDNS.h>
 #include <HTTPClient.h>
 #include <HTTPUpdate.h>
-#include <ModbusMaster.h>
+
 #include <PubSubClient.h>
 #include <TickerScheduler.h>
 #include <WiFi.h>
@@ -45,11 +53,6 @@ extern PubSubClient client_mqtt;
 
 extern AsyncWebServer server;
 
-extern HardwareSerial uart1;
-extern ModbusMaster modbus1;
-
-extern HardwareSerial uart2;
-extern ModbusMaster modbus2;
 
 /*
 * Global vars.h (без данных)

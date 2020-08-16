@@ -8,7 +8,8 @@ void file_system_init() {
   //Serial.setDebugOutput(true);
   Serial.println("--------------started----------------");
   LittleFS.begin(false,"/littlefs", 10);
-  configSetupJson = readFile("config.json", 4096);
+  //LittleFS.begin();
+  configSetupJson = readFile("config.setup.json", 4096);
   configSetupJson.replace(" ", "");
   configSetupJson.replace("\r\n", "");
   Serial.println(configSetupJson);
@@ -20,5 +21,6 @@ void file_system_init() {
   jsonWriteStr(configSetupJson, "serialNumber", serialNumber);
   jsonWriteStr(configSetupJson, "chipID", chipID);
   jsonWriteStr(configSetupJson, "firmware_version", firmware_version);
-  
+
+  //esp_log_level_set("esp_littlefs", ESP_LOG_NONE);
 }

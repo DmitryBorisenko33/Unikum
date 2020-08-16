@@ -9,6 +9,8 @@
 #define wifi_mqtt_reconnecting 60000
 #define mqtt_wifi_result
 
+#define littleFileSystem
+
 //#define OTA_enable
 //#define MDNS_enable
 //#define WS_enable
