@@ -60,10 +60,10 @@ void Web_server_init() {
         request->send(200, "text/plain", String(ESP.getFreeHeap()));
     });
 
-    //server.serveStatic("/css/", LittleFS, "/css/").setCacheControl("max-age=31536000");
-    //server.serveStatic("/js/", LittleFS, "/js/").setCacheControl("max-age=31536000");
-    //server.serveStatic("/favicon.ico", LittleFS, "/favicon.ico").setCacheControl("max-age=31536000");
-    //server.serveStatic("/icon.jpeg", LittleFS, "/icon.jpeg").setCacheControl("max-age=31536000");
+    server.serveStatic("/css/", LittleFS, "/css/").setCacheControl("max-age=31536000");
+    server.serveStatic("/js/", LittleFS, "/js/").setCacheControl("max-age=31536000");
+    server.serveStatic("/favicon.ico", LittleFS, "/favicon.ico").setCacheControl("max-age=31536000");
+    server.serveStatic("/icon.jpeg", LittleFS, "/icon.jpeg").setCacheControl("max-age=31536000");
 
     server.serveStatic("/", LittleFS, "/")
         .setDefaultFile("index.htm")
