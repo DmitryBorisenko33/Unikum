@@ -7,8 +7,8 @@ void file_system_init() {
     //Serial.setDebugOutput(true);
     Serial.println("--------------started----------------");
 
-    //LittleFS.begin(false,"/littlefs", 10);
-    LittleFS.begin();
+    LittleFS.begin(false,"/littlefs", 10);
+    //LittleFS.begin();
     
     configSetupJson = readFile("config.setup.json", 4096);
     configSetupJson.replace(" ", "");

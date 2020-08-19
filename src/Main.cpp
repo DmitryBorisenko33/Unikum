@@ -15,6 +15,9 @@ void setup() {
     ROUTER_Connecting();
     Serial.println("ROUTER_Connecting");
     //---------------------------------------------------------
+    web_init();
+    Serial.println("web_init");
+    //---------------------------------------------------------
     Web_server_init();
     Serial.println("Web_server_init");
     //---------------------------------------------------------
@@ -27,9 +30,7 @@ void setup() {
     initUpgrade();
     Serial.println("initUpgrade");
     //---------------------------------------------------------
-    web_init();
-    Serial.println("web_init");
-    //---------------------------------------------------------
+
 
     mqtt_send_debug("Loaded", "core001");
 }
