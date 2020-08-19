@@ -12,7 +12,7 @@ void web_init() {
         if (request->hasArg("WebPass")) {
             jsonWriteStr(configSetupJson, "WebPass", request->getParam("WebPass")->value());
         }
-        server.serveStatic("/", LittleFS, "/").setDefaultFile("index.htm").setAuthentication(jsonReadStr(configSetupJson,"WebUser").c_str(), jsonReadStr(configSetupJson,"WebPass").c_str());
+        //server.serveStatic("/", LittleFS, "/").setDefaultFile("index.htm").setAuthentication(jsonReadStr(configSetupJson,"WebUser").c_str(), jsonReadStr(configSetupJson,"WebPass").c_str());
         saveConfig();
         request->send(200, "text/text", "OK");
     });
