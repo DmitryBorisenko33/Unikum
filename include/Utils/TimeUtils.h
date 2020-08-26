@@ -7,19 +7,10 @@ void time_check();
 
 void reconfigTime();
 
-/*
-* Получение текущего времени
-*/
-String GetTime();
-
-String GetTimeGMT();
-
 String GetTimeUnix();
 
-String GetTimeWOsec();
+String GetFormattedTimeLocal();
 
-String GetDate();
-
-String GetDataDigital();
+String GetFormattedTimeGmt();
 
 long timeToSec(String Time);
