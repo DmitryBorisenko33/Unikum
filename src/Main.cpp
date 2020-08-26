@@ -30,8 +30,6 @@ void setup() {
     web_init();
     Serial.println("web_init");
     //---------------------------------------------------------
-
-    mqtt_send_debug("Loaded", "core001");
 }
 
 void loop() {
