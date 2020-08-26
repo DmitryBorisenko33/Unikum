@@ -26,5 +26,5 @@ void file_system_init() {
     jsonWriteStr(configSetupJson, "chipID", chipID);
     jsonWriteStr(configSetupJson, "firmware_version", firmware_version);
 
-    //esp_log_level_set("esp_littlefs", ESP_LOG_NONE);
+    esp_log_level_set("esp_littlefs", ESP_LOG_NONE);
 }

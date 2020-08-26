@@ -1,5 +1,4 @@
 #include "Mqtt.h"
-
 #include "Global.h"
 #include "WiFiUtilis.h"
 #include "cert.h"
@@ -146,10 +145,10 @@ String stateMQTT() {
             return "the network connection failed";
             break;
         case -1:
-            return "the client_mqtt is disconnected cleanly";
+            return "the client mqtt is disconnected cleanly";
             break;
         case 0:
-            return "the client_mqtt is connected";
+            return "the client mqtt is connected";
             break;
         case 1:
             return "the server doesn't support the requested version of MQTT";

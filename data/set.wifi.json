@@ -8,14 +8,14 @@
     "content": [
         {
             "type": "h5",
-            "title": "{{NameWiFiSettings}}",
+            "title": "WiFi",
             "class": "alert-warning"
         },
         {
             "type": "link",
-            "title": "{{ButMainPage}}",
+            "title": "Назад, на главную страницу",
             "action": "/",
-            "class": "btn btn-block btn-warning"
+            "class": "btn btn-block btn-default"
         },
         {
             "type": "hr"
@@ -53,12 +53,12 @@
             "type": "button",
             "title": "{{ButSave}}",
             "action": "wifi?wifissid=[[wifi-ssid]]&wifipass=[[wifi-pass]]",
-            "class": "btn btn-block btn-warning",
+            "class": "btn btn-block btn-default",
             "style": "width:100%;display:inline"
         },
         {
             "type": "link",
-            "title": "{{ButRestart}}",
+            "title": "Перезагрузить устройство",
             "action": "javascript:if(confirm(renameBlock(jsonResponse,'{{ButRestart}}'))){send_request(this,'/restart?device=ok');}",
             "class": "btn btn-block btn-danger",
             "style": "width:100%;float:left;"

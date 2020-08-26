@@ -6,7 +6,7 @@
   "content": [
     {
       "type": "h5",
-      "title": "{{SSDP}}",
+      "title": "MQTT",
       "class": "alert-warning"
     },
     {
@@ -60,14 +60,14 @@
       "title": "Сохранить и проверить соединение",
       "action": "mqttSave?mqttServer=[[1]]&mqttPort=[[2]]&mqttUser=[[3]]&mqttPass=[[4]]",
       "response": "[[my-block]]",
-      "class": "btn btn-block btn-success",
+      "class": "btn btn-block btn-default",
       "style": "width:100%;display:inline"
     },
     {
       "type": "link",
       "title": "Главная",
       "action": "/?index",
-      "class": "btn btn-block btn-danger btn-sm"
+      "class": "btn btn-block btn-default"
     }
   ]
 }

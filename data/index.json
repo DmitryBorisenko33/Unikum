@@ -8,24 +8,25 @@
 	"content": [
 		{
 			"type": "h5",
-			"title": "Smart Power Center",
+			"title": "Unikum",
 			"class": "alert-warning"
 		},
 		{
-			"type": "text",
-			"class": "alert alert-light",
-			"title": "<center><img src='/icon.jpeg' alt='Smart Power Center'></center>"
-		},
-		{
 			"type": "link",
-			"title": "Main Settings",
+			"title": "Главные настройки",
 			"action": "/?set.main",
 			"class": "btn btn-block btn-default"
 		},
 		{
 			"type": "link",
-			"title": "WIFi Settings",
+			"title": "Настройки WiFi",
 			"action": "/?set.wifi",
+			"class": "btn btn-block btn-default"
+		},
+		{
+			"type": "link",
+			"title": "Настройки MQTT",
+			"action": "/?set.mqtt",
 			"class": "btn btn-block btn-default"
 		}
 	]
