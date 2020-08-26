@@ -5,6 +5,7 @@
 #include "Utils\StringUtils.h"
 
 void Time_Init() {
+    timeClient.begin();
     ts.add(
         TIME_SYNC, 30000, [&](void*) {
             time_check();
@@ -17,32 +18,16 @@ void time_check() {
         Serial.println("[i] Time is not synchronized, start synchronization");
         reconfigTime();
     } else {
-        Serial.print("[V] Time = ");
-        Serial.print(GetDataDigital());
-        Serial.print(" ");
-        Serial.println(GetTime());
+        Serial.print("[V] Time synchronized");
     }
 }
 
 void reconfigTime() {
     if (WiFi.status() == WL_CONNECTED) {
-        //String ntp = jsonReadStr(configSetupJson, "ntp");
-        configTime(0, 0, "pool.ntp.org", "ru.pool.ntp.org", "ntp2.stratum2.ru");
-        int i = 0;
-        Serial.println("[i] Awaiting for time ");
-
-        struct tm timeinfo;
-        while (!getLocalTime(&timeinfo) && i <= 4) {
-            Serial.print(".");
-            i++;
-            delay(1000);
-        }
+        NTPClient timeClient(ntpUDP, "pool.ntp.org", 0, 30000);
 
         if (GetTimeUnix() != "failed") {
-            Serial.print("[V] Time synchronized = ");
-            Serial.print(GetDataDigital());
-            Serial.print(" ");
-            Serial.println(GetTime());
+            Serial.print("[V] Time synchronized");
         } else {
             Serial.println("[E] Time server or internet connection error, will try again in 30 sec");
         }
@@ -51,96 +36,39 @@ void reconfigTime() {
     }
 }
 
-//Получаем время в формате linux gmt
 String GetTimeUnix() {
-    time_t now = time(nullptr);
-    if (now < 30000) {
+    unsigned long timestamp = timeClient.getEpochTime();
+    if (timestamp < 30000) {
         return "failed";
     } else {
-        return String(now);
+        return String(timestamp);
     }
 }
 
-//12:00:06
-String GetTime() {
-    time_t now = time(nullptr);
-    int zone = 3600 * jsonReadStr(configSetupJson, "timezone").toInt();
-    now = now + zone;
-    String Time = "";
-    Time += ctime(&now);
-    int i = Time.indexOf(":");
-    Time = Time.substring(i - 2, i + 6);
-    return Time;
+String GetFormattedTimeLocal() {
+    int hrs = timeClient.getHours();
+    int min = timeClient.getMinutes();
+    int sec = timeClient.getSeconds();
+    int hrsLocal = hrs + jsonReadInt(configSetupJson, "timezone");
+    hrsLocal = hrsLocal >= 24 ? hrsLocal - 24 : hrsLocal;
+    String hrsLocalStr = hrsLocal < 10 ? "0" + String(hrsLocal) : String(hrsLocal);
+    String minStr = min < 10 ? "0" + String(min) : String(min);
+    String secStr = sec < 10 ? "0" + String(sec) : String(sec);
+    String ret = hrsLocalStr + ":" + minStr + ":" + secStr;
+    return ret;
 }
 
-//12:00:06
-String GetTimeGMT() {
-    time_t now = time(nullptr);
-    String Time = "";
-    Time += ctime(&now);
-    int i = Time.indexOf(":");
-    Time = Time.substring(i - 2, i + 6);
-    return Time;
+String GetFormattedTimeGmt() {
+    int hrs = timeClient.getHours();
+    int min = timeClient.getMinutes();
+    int sec = timeClient.getSeconds();
+    String hrsStr = hrs < 10 ? "0" + String(hrs) : String(hrs);
+    String minStr = min < 10 ? "0" + String(min) : String(min);
+    String secStr = sec < 10 ? "0" + String(sec) : String(sec);
+    String ret = hrsStr + ":" + minStr + ":" + secStr;
+    return ret;
 }
 
-//12:00
-String GetTimeWOsec() {
-    time_t now = time(nullptr);
-    int zone = 3600 * jsonReadStr(configSetupJson, "timezone").toInt();
-    now = now + zone;
-    String Time = "";
-    Time += ctime(&now);
-    int i = Time.indexOf(":");
-    Time = Time.substring(i - 2, i + 3);
-    return Time;
-}
-
-// Получение даты
-String GetDate() {
-    time_t now = time(nullptr);
-    int zone = 3600 * jsonReadStr(configSetupJson, "timezone").toInt();
-    now = now + zone;
-    String Data = "";
-    Data += ctime(&now);
-    Data.replace("\n", "");
-    uint8_t i = Data.lastIndexOf(" ");
-    String Time = Data.substring(i - 8, i + 1);
-    Data.replace(Time, "");
-    return Data;
-}
-
-String GetDataDigital() {
-    String date = GetDate();
-
-    date = deleteBeforeDelimiter(date, " ");
-
-    date.replace("Jan", "01");
-    date.replace("Feb", "02");
-    date.replace("Mar", "03");
-    date.replace("Apr", "04");
-    date.replace("May", "05");
-    date.replace("Jun", "06");
-    date.replace("Jul", "07");
-    date.replace("Aug", "08");
-    date.replace("Sep", "09");
-    date.replace("Oct", "10");
-    date.replace("Nov", "11");
-    date.replace("Dec", "12");
-
-    String month = date.substring(0, 2);
-    String day = date.substring(3, 5);
-    String year = date.substring(8, 10);
-
-    String out = day;
-    out += ".";
-    out += month;
-    out += ".";
-    out += year;
-
-    return out;
-}
-
-//00:00:00
 long timeToSec(String Time) {
     long sech = selectToMarker(Time, ":").toInt() * 60 * 60;
     Time = deleteBeforeDelimiter(Time, ":");
