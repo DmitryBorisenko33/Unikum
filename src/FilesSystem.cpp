@@ -6,10 +6,15 @@ void file_system_init() {
     Serial.begin(115200);
     //Serial.setDebugOutput(true);
     Serial.println("--------------started----------------");
+<<<<<<< HEAD
 
     LittleFS.begin(false,"/littlefs", 10);
     //LittleFS.begin();
     
+=======
+    //LittleFS.begin(false,"/littlefs", 10);
+    LittleFS.begin();
+>>>>>>> parent of e400fa9... several serveStatic
     configSetupJson = readFile("config.setup.json", 4096);
     configSetupJson.replace(" ", "");
     configSetupJson.replace("\r\n", "");

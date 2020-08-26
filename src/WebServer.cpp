@@ -60,7 +60,14 @@ void Web_server_init() {
         request->send(200, "text/plain", String(ESP.getFreeHeap()));
     });
 
+<<<<<<< HEAD
   //=============================Устанавливаем реакции на запросы к серверу============================
+=======
+    //server.serveStatic("/css/", LittleFS, "/css/").setCacheControl("max-age=31536000");
+    //server.serveStatic("/js/", LittleFS, "/js/").setCacheControl("max-age=31536000");
+    //server.serveStatic("/favicon.ico", LittleFS, "/favicon.ico").setCacheControl("max-age=31536000");
+    //server.serveStatic("/icon.jpeg", LittleFS, "/icon.jpeg").setCacheControl("max-age=31536000");
+>>>>>>> parent of e400fa9... several serveStatic
 
     // --------------------Выдаем данные configLiveJson //config.live.json - динамические данные
     server.on("/config.live.json", HTTP_GET, [](AsyncWebServerRequest *request) {
