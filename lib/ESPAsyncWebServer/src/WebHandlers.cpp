@@ -134,26 +134,57 @@ bool AsyncStaticWebHandler::_getFile(AsyncWebServerRequest *request)
 #define FILE_IS_REAL(f) (f == true)
 #endif
 
-bool AsyncStaticWebHandler::_fileExists(AsyncWebServerRequest *request, const String& path)
-{
+//bool AsyncStaticWebHandler::_fileExists(AsyncWebServerRequest *request, const String& path)
+//
+//bool fileFound = false;
+//bool gzipFound = false;
+//
+//String gzip = path + ".gz";
+//
+//if (_gzipFirst) {
+//  request->_tempFile = _fs.open(gzip, "r");
+//  gzipFound = FILE_IS_REAL(request->_tempFile);
+//  if (!gzipFound){
+//    request->_tempFile = _fs.open(path, "r");
+//    fileFound = FILE_IS_REAL(request->_tempFile);
+//  }
+//} else {
+//  request->_tempFile = _fs.open(path, "r");
+//  fileFound = FILE_IS_REAL(request->_tempFile);
+//  if (!fileFound){
+//    request->_tempFile = _fs.open(gzip, "r");
+//    gzipFound = FILE_IS_REAL(request->_tempFile);
+//  }
+//}
+
+  bool AsyncStaticWebHandler::_fileExists(AsyncWebServerRequest *request, const String& path)
+  {
   bool fileFound = false;
   bool gzipFound = false;
 
   String gzip = path + ".gz";
 
   if (_gzipFirst) {
-    request->_tempFile = _fs.open(gzip, "r");
-    gzipFound = FILE_IS_REAL(request->_tempFile);
-    if (!gzipFound){
-      request->_tempFile = _fs.open(path, "r");
-      fileFound = FILE_IS_REAL(request->_tempFile);
-    }
-  } else {
-    request->_tempFile = _fs.open(path, "r");
-    fileFound = FILE_IS_REAL(request->_tempFile);
-    if (!fileFound){
+    if (_fs.exists(gzip)) { 
       request->_tempFile = _fs.open(gzip, "r");
       gzipFound = FILE_IS_REAL(request->_tempFile);
+    }
+    if (!gzipFound){
+      if (_fs.exists(path)) { 
+       request->_tempFile = _fs.open(path, "r");
+       fileFound = FILE_IS_REAL(request->_tempFile);
+      }
+    }
+  } else {
+    if (_fs.exists(path)) {
+     request->_tempFile = _fs.open(path, "r");
+     fileFound = FILE_IS_REAL(request->_tempFile);
+    }
+    if (!fileFound){
+     if (_fs.exists(gzip)) {
+      request->_tempFile = _fs.open(gzip, "r");
+      gzipFound = FILE_IS_REAL(request->_tempFile);
+     }
     }
   }
 
