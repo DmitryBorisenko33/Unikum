@@ -60,12 +60,19 @@ void Web_server_init() {
         request->send(200, "text/plain", String(ESP.getFreeHeap()));
     });
 
+<<<<<<< HEAD
     //=============================Устанавливаем реакции на запросы к серверу============================
 
     server.serveStatic("/css/", LittleFS, "/css/").setCacheControl("max-age=31536000");
     server.serveStatic("/js/", LittleFS, "/js/").setCacheControl("max-age=31536000");
     server.serveStatic("/favicon.ico", LittleFS, "/favicon.ico").setCacheControl("max-age=31536000");
     server.serveStatic("/icon.jpeg", LittleFS, "/icon.jpeg").setCacheControl("max-age=31536000");
+=======
+    //server.serveStatic("/css/", LittleFS, "/css/").setCacheControl("max-age=31536000");
+    //server.serveStatic("/js/", LittleFS, "/js/").setCacheControl("max-age=31536000");
+    //server.serveStatic("/favicon.ico", LittleFS, "/favicon.ico").setCacheControl("max-age=31536000");
+    //server.serveStatic("/icon.jpeg", LittleFS, "/icon.jpeg").setCacheControl("max-age=31536000");
+>>>>>>> parent of e400fa9... several serveStatic
 
     server.serveStatic("/", LittleFS, "/").setDefaultFile("index.htm").setAuthentication(jsonReadStr(configSetupJson, "WebUser").c_str(), jsonReadStr(configSetupJson, "WebPass").c_str());
 
