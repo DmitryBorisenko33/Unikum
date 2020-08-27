@@ -8,7 +8,7 @@
 #include "WiFiUtilis.h"
 
 void setup() {
-    firmware_version = "0.0.2";//DATE_COMPILING + " " + TIME_COMPILING;
+    firmware_version = "0.0.3";//DATE_COMPILING + " " + TIME_COMPILING;
     file_system_init();
     Serial.println("file_system_init");
     //---------------------------------------------------------
