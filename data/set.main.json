@@ -1,0 +1,82 @@
+{
+    "configs": [
+        "/config.setup.json",
+        "/lang/lang.en.json"
+    ],
+    "title": "Главная",
+    "class": "col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6",
+    "content": [
+        {
+            "type": "h5",
+            "title": "{{NameMainSettings}}",
+            "class": "alert-warning"
+        },
+        {
+            "type": "link",
+            "title": "{{ButMainPage}}",
+            "action": "/",
+            "class": "btn btn-block btn-warning"
+        },
+        {
+            "type": "h4",
+            "title": "{{MainSetSerialNumber}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "h4",
+            "title": "{{serialNumber}}",
+            "style": "width:40%;float:right"
+        },
+       
+        {
+            "type": "h4",
+            "title": "{{MainSetLanguage}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "select",
+            "state": "en",
+            "style": "width:40%;float:right",
+            "title": {
+                "ru": "RU",
+                "en": "EN",
+                "lv": "LV",
+                "ua": "UA"
+            }
+        },
+        
+        {
+            "type": "h4",
+            "title": "{{MainSetWebUser}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{MainSetWebUser}}",
+            "name": "Web-User",
+            "pattern": "",
+            "state": "{{WebUser}}",
+            "style": "width:40%;float:right"
+        },
+        {
+            "type": "h4",
+            "title": "{{MainSetWebPass}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{MainSetWebPass}}",
+            "name": "Web-Pass",
+            "pattern": "",
+            "state": "{{WebPass}}",
+            "style": "width:40%;float:right"
+        },
+        {
+            "type": "button",
+            "title": "{{ButSave}}",
+            "action": "web?WebUser=[[Web-User]]&WebPass=[[Web-Pass]]",
+            "class": "btn btn-block btn-warning",
+            "style": "width:100%;display:inline"
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "ssidAP": "WiFi",
+    "passwordAP": "",
+    "wifissid": "VOLODYA",
+    "wifipass": "BELCHENKO",
+
+    "upstfs":0,
+    "upstb":0,
+
+    "timezone": 3,
+    "ntp": "pool.ntp.org",
+
+    "mqttServer": "enfinergy.tech",
+    "mqttPort": 8883,
+    "mqttUser": "4039078204",
+    "mqttPass": "3tbFW&95",
+
+    "WebUser":"admin",
+    "WebPass":"admin",
+
+    "usermodecr":1,
+
+    "inv1": 1,
+    
+    "idis": 217,
+
+    "vsi": 220,
+    "fsi":50,
+    
+    "gpsi":0,
+    "pud":0,
+    "vgmin": 160,
+    "vgmax": 260,
+    "gtei": 0,
+    "dsoc": 0,
+    "pt": "06:00:00",
+    "opt": "23:00:00",
+    
+    "stpv": 1,
+    "papvcr":0,
+    "pnpv":1000,
+    "vocpv":60,
+    "vmppv":65,
+    "imppv":24,
+    "iscpv":16,
+    "angpv":90,
+    "azpv":185,
+
+    "socf": 75,
+    "socm": 70,
+    "socl": 10,
+
+    "esvi":1,
+    "bti":2,
+    "setmode": 3,
+    "manual": 1,
+
+    "itpv": 0,
+
+    "bnset": 2,
+    "cbti": 210,
+    "idsi": 21.7,
+    "igchmi": 40.0,
+    "ipvmi": 10.0,
+    "ichmi": 80.0,
+    "vbsci": 54.5,
+    "vbsdi": 48,
+    "vabi": 54.5,
+    "vfli": 54,
+    "vbli": 48,
+    "vbhi": 60,
+    "spbi":0
+}

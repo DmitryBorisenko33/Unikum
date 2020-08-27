@@ -1,0 +1,67 @@
+{
+    "configs": [
+        "/config.setup.json",
+        "/lang/lang.en.json"
+    ],
+    "title": "Конфигурация",
+    "class": "col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6",
+    "content": [
+        {
+            "type": "h5",
+            "title": "{{NameWiFiSettings}}",
+            "class": "alert-warning"
+        },
+        {
+            "type": "link",
+            "title": "{{ButMainPage}}",
+            "action": "/",
+            "class": "btn btn-block btn-warning"
+        },
+        {
+            "type": "hr"
+        },
+        {
+            "type": "h4",
+            "title": "{{WifiSetSSID}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{WifiSetSSID}}",
+            "name": "wifi-ssid",
+            "pattern": "",
+            "state": "{{wifissid}}",
+            "style": "width:40%;float:right"
+        },
+        {
+            "type": "h4",
+            "title": "{{WifiSetPass}}",
+            "style": "width:60%;float:left;"
+        },
+        {
+            "type": "input",
+            "title": "{{WifiSetPass}}",
+            "name": "wifi-pass",
+            "pattern": "",
+            "state": "{{wifipass}}",
+            "style": "width:40%;float:right"
+        },
+        {
+            "type": "hr"
+        },
+        {
+            "type": "button",
+            "title": "{{ButSave}}",
+            "action": "wifi?wifissid=[[wifi-ssid]]&wifipass=[[wifi-pass]]",
+            "class": "btn btn-block btn-warning",
+            "style": "width:100%;display:inline"
+        },
+        {
+            "type": "link",
+            "title": "{{ButRestart}}",
+            "action": "javascript:if(confirm(renameBlock(jsonResponse,'{{ButRestart}}'))){send_request(this,'/restart?device=ok');}",
+            "class": "btn btn-block btn-danger",
+            "style": "width:100%;float:left;"
+        }
+    ]
+}
