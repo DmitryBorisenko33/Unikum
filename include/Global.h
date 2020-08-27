@@ -67,33 +67,12 @@ extern const char* hostName;
 extern String configSetupJson;
 extern String configLiveJson;
 extern String configOptionJson;
-extern String inv001;
-extern String bat001;
-extern String bat002;
-extern String bat003;
-extern String bat004;
-extern String bat005;
-extern String cb001;
-extern String cb002;
-extern String cb003;
-extern String cb004;
-extern String core001;
-
-extern String modbusLog;
-
-extern String serialNumber;
-
 //NTP
 extern const char* ntpServer;
 extern const long gmtOffset_sec;
 extern const int daylightOffset_sec;
 //SYSTEM
-extern int sysmod;
 extern String firmware_version;
-extern int readingTimeSec;
-extern int startMillis;
-extern int endMillis;
-extern bool firstStart;
 //UPGRADE
 extern boolean upgrade_flag;
 //SAFETY

@@ -17,16 +17,6 @@
             "action": "/",
             "class": "btn btn-block btn-warning"
         },
-        {
-            "type": "h4",
-            "title": "{{MainSetSerialNumber}}",
-            "style": "width:60%;float:left;"
-        },
-        {
-            "type": "h4",
-            "title": "{{serialNumber}}",
-            "style": "width:40%;float:right"
-        },
        
         {
             "type": "h4",

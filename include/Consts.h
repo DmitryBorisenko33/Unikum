@@ -4,7 +4,7 @@
 * Здесь хранятся все настройки прошивки
 */
 
-#define mqtts //включчение mqtt с шифрованием
+//#define mqtts //включчение mqtt с шифрованием
 
 #define wifi_mqtt_reconnecting 60000
 #define mqtt_wifi_result
