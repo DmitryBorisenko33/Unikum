@@ -18,8 +18,6 @@ void file_system_init() {
     //---------------------------------------------------------
     uint32_t chipID_u = ESP.getEfuseMac();
     chipID = String(chipID_u);
-    serialNumber = serialNumber + chipID;
-    jsonWriteStr(configSetupJson, "serialNumber", serialNumber);
     jsonWriteStr(configSetupJson, "chipID", chipID);
     jsonWriteStr(configSetupJson, "firmware_version", firmware_version);
 

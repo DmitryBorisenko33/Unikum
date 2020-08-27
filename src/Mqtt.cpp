@@ -132,13 +132,6 @@ boolean mqtt_send_status(String device_name, String data) {
     return send_status;
 }
 
-boolean mqtt_send_debug(String data, String name) {
-    String topik = "/debug/" + name;
-    boolean send_status = client_mqtt.beginPublish(topik.c_str(), data.length(), false);
-    client_mqtt.print(data);
-    client_mqtt.endPublish();
-    return send_status;
-}
 
 String stateMQTT() {
     int state = client_mqtt.state();

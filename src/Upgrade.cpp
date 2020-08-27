@@ -18,7 +18,7 @@ void initUpgrade() {
 void upgrade_firmware() {
     
     Serial.println("Start upgrade LittleFS, please wait...");
-    mqtt_send_debug("start upgrade, please wait...", "littleFs");
+ 
 
     WiFiClient client_for_upgrade;
 
@@ -29,10 +29,8 @@ void upgrade_firmware() {
     if (ret == HTTP_UPDATE_OK) {  //если FS обновилась успешно
 
         Serial.println("!=!=!LittleFS upgrade done!");
-        mqtt_send_debug("upgrade done!", "littleFs");
 
         Serial.println("Start upgrade BUILD, please wait...");
-        mqtt_send_debug("start upgrade, please wait...", "build");
 
         httpUpdate.rebootOnUpdate(false);
         t_httpUpdate_return ret = httpUpdate.update(client_for_upgrade, "http://91.204.228.124:1100/enfinergy/update/firmware.bin");
@@ -40,7 +38,6 @@ void upgrade_firmware() {
         if (ret == HTTP_UPDATE_OK) {  //если BUILD обновился успешно
 
             Serial.println("!=!=!BUILD upgrade done!");
-            mqtt_send_debug("upgrade done!", "build");
 
             Serial.println("Restart ESP....");
             delay(1000);
