@@ -23,6 +23,8 @@ void MQTT_init() {
         }
 
         saveConfig();
+        client_mqtt.disconnect();
+        MQTT_Connecting();
 
         String tmp = "{}";
         jsonWriteStr(tmp, "title", "<button class=\"close\" onclick=\"toggle('my-block')\">×</button>" + stateMQTT());

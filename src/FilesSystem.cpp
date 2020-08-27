@@ -10,7 +10,7 @@ void file_system_init() {
     //LittleFS.begin(false,"/littlefs", 10);
     LittleFS.begin();
     
-    configSetupJson = readFile("config.setup.json", 4096);
+    configSetupJson = readFile("config.json", 4096);
     configSetupJson.replace(" ", "");
     configSetupJson.replace("\r\n", "");
     Serial.println(configSetupJson);

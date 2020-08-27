@@ -1,0 +1,20 @@
+{
+    "ssidAP": "WiFi",
+    "passwordAP": "",
+    "wifissid": "VOLODYA",
+    "wifipass": "BELCHENKO",
+
+    "upstfs":0,
+    "upstb":0,
+
+    "timezone": 3,
+    "ntp": "pool.ntp.org",
+
+    "mqttServer": "91.204.228.124",
+    "mqttPort": 1883,
+    "mqttUser": "test",
+    "mqttPass": "test",
+
+    "WebUser":"admin",
+    "WebPass":"admin"
+}

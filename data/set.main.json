@@ -17,7 +17,21 @@
             "action": "/",
             "class": "btn btn-block btn-warning"
         },
-       
+        {
+            "type": "h4",
+            "title": "Device ID: {{chipID}}"
+        },
+        {
+            "type": "h4",
+            "title": "Версия прошивки: {{firmware_version}}"
+        },
+        {
+            "type": "h4",
+            "title": "Версия файловой системы: 0.0.1"
+        },
+        {
+            "type": "hr"
+        },
         {
             "type": "h4",
             "title": "{{MainSetLanguage}}",
@@ -34,7 +48,6 @@
                 "ua": "UA"
             }
         },
-        
         {
             "type": "h4",
             "title": "{{MainSetWebUser}}",
@@ -67,6 +80,22 @@
             "action": "web?WebUser=[[Web-User]]&WebPass=[[Web-Pass]]",
             "class": "btn btn-block btn-warning",
             "style": "width:100%;display:inline"
+        },
+        {
+            "type": "h3",
+            "name": "my-block",
+            "style": "position:fixed;top:50%;left:50%;width:400px;margin-left:-200px;text-align:center;",
+            "class": "hidden"
+        },
+        {
+            "type": "hr"
+        },
+        {
+            "type": "button",
+            "title": "Обновить прошивку",
+            "action": "/check",
+            "response": "[[my-block]]",
+            "class": "btn btn-block btn-danger"
         }
     ]
 }

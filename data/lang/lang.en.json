@@ -12,5 +12,9 @@
     "MainSetWebPass": "Пароль:",
 
     "WifiSetSSID": "Название сети WiFi:",
-    "WifiSetPass": "Пароль сети WiFi:"
+    "WifiSetPass": "Пароль сети WiFi:",
+
+    "ServSetUpdateNew":"Обнаружена новая версия прошивки",
+    "ServSetUpdateProgress":"Обновление в процессе, когда обновление завершится, страница перезагрузится автоматически",
+    "ServSetUpdateInstall":"Установить обновление"
 }
